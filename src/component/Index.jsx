@@ -1,12 +1,10 @@
-import ReactDOM from 'react-dom'
-import '../css/index.css'
+import ReactDOM from 'react-dom';
+import App from './App';
+import '../css/index.css';
 
-const Index = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
-
-export default Index
+ReactDOM.render(
+  <>
+    <App />
+  </>,
+  document.getElementById('root')
+);
