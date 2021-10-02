@@ -1,0 +1,19 @@
+{
+  "name": "newgen-authclient",
+  "version": "1.0.0",
+  "description": "Frontend of Auth Handling client for my NewGen Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mVaibhavPrakash/NewGen-AuthClient.git"
+  },
+  "author": "Vaibhav Prakash",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mVaibhavPrakash/NewGen-AuthClient/issues"
+  },
+  "homepage": "https://github.com/mVaibhavPrakash/NewGen-AuthClient#readme"
+}
