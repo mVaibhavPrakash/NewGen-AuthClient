@@ -1,9 +1,10 @@
+import LoginForm from './LoginForm'
 import '../css/app.css'
 
 const App = () => {
     return (
-        <div>
-            
+        <div className='app'>
+            <LoginForm />
         </div>
     )
 }
