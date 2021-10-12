@@ -9,5 +9,7 @@ html{
   *{
     padding: 0 0 0 0;
     margin: 0 0 0 0;
+    box-sizing: border-box;
   }
   
+  /*#4ba4fa*/

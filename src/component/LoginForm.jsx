@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Input from './Input'
+import Label from './Label'
+import login from '../js/login'
 import '../css/loginform.css'
 
 const LoginForm = () => {
@@ -18,14 +20,12 @@ const LoginForm = () => {
     }
 
     return (
-        <div id='loginform'>
-            <label htmlFor='username'>Enter Username</label>
-            <br />
+        <div className='loginform'>
+            <Label forr='username' text='Enter username'/>
             <Input typ='email' nam ='username' max={48} onChangeFun={onUsernameChange}/>
-            <label htmlFor='password'>Enter Password</label>
-            <br />
+            <Label forr='password' text='Enter Password' />
             <Input typ='password' nam='password' max={32} onChangeFun={onPasswordChange}/>
-            <button >Login!</button>
+            <button onClick={(e) => login(e,username,password)}>Login!</button>
         </div>
     )
 }

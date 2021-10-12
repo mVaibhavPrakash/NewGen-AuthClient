@@ -1,20 +1,36 @@
-#loginform{
-    width:46vw;
-    margin:0 auto;
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
+.loginform{
+    width: 50vw;
+    margin: 0 auto;
+    margin-top: 20vh;
+    padding: 0.35rem;
+    font-size: 0.25rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-#loginform label{
-    font-size: 0.2rem;
-}
-
-#loginform button{
-    width: 23vw;
-    height: 0.4rem;
-    font-size: 0.2rem;
-    background-color: aqua;
+.loginform input{
+    display: block;
+    width: 100%;
     border: none;
-    border: 1px solid rgba(128, 128, 128,0.2);
-    border-radius: 0.05rem;
+    border: 1px solid rgba(128, 128, 128,0.4);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.loginform button{
+    border: none;
+    border: 1px solid rgba(128, 128, 128,0.4);
+    border-radius: 10px;
+    width: 50%;
+    height: 0.35rem;
+    font-size: 0.25rem;
+    margin-top: 0.3rem;
+    background-color: #4fe0c0;
+    color: white;
+    font-weight: 500;
+}
+
+.loginform button:active{
+    background-color: #80ecd5;
 }

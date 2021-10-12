@@ -10,7 +10,6 @@ module.exports = {
   mode: 'development',
   devServer: {
     port: 3012,
-    watchContentBase: true,
   },
   module: {
     rules: [
