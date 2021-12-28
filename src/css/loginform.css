@@ -1,36 +1,64 @@
-.loginform{
-    width: 50vw;
+.AuthClient-loginform{
+    width: 60vw;
     margin: 0 auto;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    border: 1px solid grey;
     margin-top: 20vh;
-    padding: 0.35rem;
+    padding: 0.50rem;
     font-size: 0.25rem;
     font-family: 'Courier New', Courier, monospace;
 }
 
-.loginform input{
+.AuthClient-loginform input{
     display: block;
     width: 100%;
-    border: none;
-    border: 1px solid rgba(128, 128, 128,0.4);
-    border-radius: 10px;
     padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 25px;
+    margin-top: 15px;
+    margin-bottom: 20px; background-color: #acd6ef; /*IE fallback*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#acd6ef), to(#6ec2e8));
+    background-image: -moz-linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%);
+    background-image: linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%);
+    border-radius: 30px;
+    border: 1px solid #66add6;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .5);
 }
 
-.loginform button{
+.AuthClient-loginform button{
     border: none;
     border: 1px solid rgba(128, 128, 128,0.4);
     border-radius: 10px;
+    cursor: pointer;
+    display: block;
     width: 50%;
     height: 0.35rem;
     font-size: 0.25rem;
-    margin-top: 0.3rem;
+    margin-top: 0.05rem;
     background-color: #4fe0c0;
     color: white;
     font-weight: 500;
 }
 
-.loginform button:active{
+.AuthClient-loginform div{
+    width:49%;
+    float: right;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.AuthClient-loginform div a{
+    text-decoration: underline;
+    color: #4fe0c0;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-bottom: 18px;
+}
+
+.AuthClient-loginform button:active{
     background-color: #80ecd5;
+}
+
+@media screen and (max-width:700px) {
+    .AuthClient-loginform{
+        width:80vw;
+    }
 }

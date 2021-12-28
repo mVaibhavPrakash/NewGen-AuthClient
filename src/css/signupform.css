@@ -1,0 +1,45 @@
+.AuthClient-Signupform{
+    width: 60vw;
+    margin: 0 auto;
+    border: 1px solid grey;
+    margin-top: 20vh;
+    padding: 0.50rem;
+    font-size: 0.25rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.AuthClient-Signupform input{
+    display: block;
+    width: 100%;
+    border: none;
+    border: 1px solid rgba(128, 128, 128,0.4);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.AuthClient-Signupform button{
+    border: none;
+    border: 1px solid rgba(128, 128, 128,0.4);
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    width: 50%;
+    height: 0.35rem;
+    font-size: 0.25rem;
+    margin-top: 0.05rem;
+    background-color: #4fe0c0;
+    color: white;
+    font-weight: 500;
+}
+
+.AuthClient-Signupform button:active{
+    background-color: #80ecd5;
+}
+
+@media screen and (max-width:700px) {
+    .AuthClient-Signupform{
+        width:80vw;
+    }
+}

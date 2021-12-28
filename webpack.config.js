@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ModuleFederation = require('webpack/lib/container/ModuleFederationPlugin');
 
 module.exports = {
   entry: './src/component/Index.jsx',
@@ -44,5 +45,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
     }),
+    new ModuleFederation({}),
   ],
 };

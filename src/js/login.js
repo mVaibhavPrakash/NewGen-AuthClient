@@ -1,12 +1,12 @@
 import axios from 'axios';
-const login = (e, username, password) => {
+const login = (e, loginData) => {
   e.preventDefault();
   axios({
     method: 'POST',
     url: 'http://localhost:3002/login',
     data: {
-      username,
-      password,
+      username: loginData.username,
+      password: loginData.password,
     },
   }).then((res) => {
     if (res.status === 200) {
