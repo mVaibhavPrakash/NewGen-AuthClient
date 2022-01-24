@@ -1,5 +1,4 @@
 html{
-    font-size: 6.764vw;  /* 1rem= 100px */
     background-color: rgba(128, 128, 128,0.2);
   }
   input:focus, textarea:focus, select:focus{

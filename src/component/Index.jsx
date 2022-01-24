@@ -1,10 +1,13 @@
 import ReactDOM from 'react-dom';
-import App from './App';
+import {BrowserRouter} from 'react-router-dom'
+import AuthApp from './AuthApp';
 import '../css/index.css';
 
 ReactDOM.render(
   <>
-    <App />
+    <BrowserRouter>
+      <AuthApp />
+    </BrowserRouter>
   </>,
-  document.getElementById('root')
+  document.getElementById('auth-root')
 );
