@@ -1,6 +1,11 @@
+.auth{
+	position: relative;
+	top:1.4rem;
+}
 
 .auth-wave{
 	position: fixed;
+	top:1.4rem;
 	bottom: 0;
 	left: 0;
 	height: 100%;
@@ -43,9 +48,9 @@
 
 .auth-login-content h2{
 	margin: 15px 0;
-	color: #333;
+	color: #2d386e;
 	text-transform: uppercase;
-	font-size: 1.45rem;
+	font-size: 0.8rem;
 }
 
 .auth-login-content .auth-input-div{
@@ -54,21 +59,22 @@
     grid-template-columns: 7% 93%;
     margin: 25px 0;
     padding: 5px 0;
-    border-bottom: 2px solid #abaaaa;
+    border-bottom: 2px solid #2d386e;
 }
 
-.auth-login-content .auth-auth-input-div.one{
+.auth-login-content .auth-input-div.one{
 	margin-top: 0;
 }
 
 .auth-i{
-	color: #abaaaa;
+	color: #2d386e;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 0.8rem;
 }
 
-.auth-ii{
+.auth-i i{
 	transition: .3s;
 }
 
@@ -82,8 +88,8 @@
 	left: 10px;
 	top: 50%;
 	transform: translateY(-50%);
-	color: #999;
-	font-size: 18px;
+	color: #2d386e;
+	font-size: 14px;
 	transition: .3s;
 }
 
@@ -111,7 +117,7 @@
 
 .auth-input-div.focus > div > h5{
 	top: -5px;
-	font-size: 15px;
+	font-size: 12px;
 }
 
 .auth-input-div.focus > .i > i{
@@ -127,22 +133,22 @@
 	border: none;
 	outline: none;
 	background: none;
-	padding: 1rem 0.35rem;
-	font-size: 0.6rem;
-	color: #555;
+	padding: 0.25rem 0.35rem;
+	font-size: 0.4rem;
+	color: #2d386e;
 	font-family: 'poppins', sans-serif;
 }
 
 .auth-input-div.pass{
-	margin-bottom: 4px;
+	margin-bottom: 10px;
 }
 
 .auth-a{
 	display: block;
 	text-align: right;
 	text-decoration: none;
-	color: #999;
-	font-size: 0.45rem;
+	color: #2d386e;
+	font-size: 0.3rem;
 	transition: .3s;
 }
 
@@ -153,13 +159,13 @@
 .auth-btn{
 	display: block;
 	width: 100%;
-	height: 50px;
-	border-radius: 25px;
+	height: 35px;
+	border-radius: 15px;
 	outline: none;
 	border: none;
 	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
 	background-size: 200%;
-	font-size: 0.6rem;
+	font-size: 0.3rem;
 	color: #fff;
 	font-family: 'Poppins', sans-serif;
 	text-transform: uppercase;
@@ -181,10 +187,11 @@
 @media screen and (max-width: 1000px){
 	.auth-form{
 		width: 290px;
+		margin: auto;
 	}
 
 	.auth-login-content h2{
-        font-size: 1.2rem;
+        font-size: 0.7rem;
         margin: 8px 0;
 	}
 
@@ -197,7 +204,6 @@
 	.auth-container{
 		grid-template-columns: 1fr;
 	}
-
 	.auth-img{
 		display: none;
 	}

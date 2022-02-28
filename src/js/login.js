@@ -1,6 +1,6 @@
-import axios from 'axios';
-const login = (e, loginData) => {
-  e.preventDefault();
+import axios from 'axios'
+const login = (e, loginData, setUser, navigate) => {
+  e.preventDefault()
   axios({
     method: 'POST',
     url: 'http://localhost:3002/login',
@@ -8,14 +8,17 @@ const login = (e, loginData) => {
       username: loginData.username,
       password: loginData.password,
     },
+    withCredentials: true,
   }).then((res) => {
     if (res.status === 200) {
-      const auth = res.headers.authorization;
-      localStorage.setItem('token', auth);
-      return true;
+      const auth = res.data
+      setUser(auth.username)
+      navigate('/')
+      return true
     }
-    return false;
-  });
-};
+    navigate('/auth/signup')
+    return false
+  })
+}
 
-export default login;
+export default login

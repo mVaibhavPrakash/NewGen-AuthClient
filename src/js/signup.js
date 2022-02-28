@@ -1,20 +1,18 @@
-import axios from 'axios';
-const login = (e, loginData) => {
-  e.preventDefault();
+import axios from 'axios'
+const signup = (e, loginData, setUser, navigate) => {
+  e.preventDefault()
   axios({
     method: 'POST',
-    url: 'http://localhost:3002/login',
+    url: 'http://localhost:3002/signup',
     data: {
-      name: loginData.name,
       username: loginData.username,
       password: loginData.password,
     },
   }).then((res) => {
     if (res.status === 200) {
-      return true;
+      navigate('/auth/login')
     }
-    return false;
-  });
-};
+  })
+}
 
-export default login;
+export default signup
