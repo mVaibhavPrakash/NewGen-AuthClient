@@ -21,11 +21,15 @@ const LoginForm = ({footerRef}) => {
     const oneRef= useRef(null)
 	const userRef = useRef(null)
 	const usernameRef= useRef(null)
+	const twoRef = useRef(null)
+	const nameRef = useRef(null)
+	const firstNameRef = useRef(null)
 	const passRef = useRef(null)
 	const pwdRef=useRef(null)
 	const passwordRef = useRef(null)
 	const [username,setUsername] = useState('')
 	const [password,setPassword] = useState('')
+	const [firstname,setFirstName] = useState('')
 	const [User,setUser] = useContext(AuthContext)
 	const navigate = useNavigate()
 	
@@ -51,6 +55,15 @@ const LoginForm = ({footerRef}) => {
 								<input type="text" value={username} onChange={(e) => setUsername(e.target.value)} onBlur={()=>{oneRef.current.style.borderBottom='2px solid #2d386e';userRef.current.style.color='#2d386e';!username ? usernameRef.current.textContent='Username':''}} onFocus={(e)=>{oneRef.current.style.borderBottom='2px solid #38d39f';usernameRef.current.textContent='';userRef.current.style.color='#38d39f'}} className="auth-input" />
 						</div>
 					</div>
+					<div className="auth-input-div" ref={twoRef}>
+						<div className="auth-i" ref={nameRef}>
+							<FontAwesomeIcon className='auth-ii' icon={faUser}/>
+						</div>
+						<div className="auth-div">
+								<h5 ref={firstNameRef}>First Name</h5>
+								<input type="text" value={firstname} onChange={(e) => setFirstName(e.target.value)} onBlur={()=>{twoRef.current.style.borderBottom='2px solid #2d386e';nameRef.current.style.color='#2d386e';!username ? firstNameRef.current.textContent='Firstname':''}} onFocus={(e)=>{twoRef.current.style.borderBottom='2px solid #38d39f';firstNameRef.current.textContent='';nameRef.current.style.color='#38d39f'}} className="auth-input" />
+						</div>
+					</div>
 					<div className="auth-input-div pass" ref={passRef}>
 						<div className="auth-i" ref={pwdRef}> 
 							<FontAwesomeIcon className='auth-ii' icon={faLock}/>
@@ -61,7 +74,7 @@ const LoginForm = ({footerRef}) => {
 						</div>
 					</div>
 					<Link className='auth-a' to={"auth/signup"}>Don't have account?Signup</Link>
-					<input type="submit" onClick={e => signup(e,{username,password},setUser,navigate)} className="auth-btn" value="Login"/>
+					<input type="submit" onClick={e => signup(e,{username,firstname,password},setUser,navigate)} className="auth-btn" value="Login"/>
 				</div>
 			</div>
 		</div>

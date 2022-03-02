@@ -1,4 +1,6 @@
 import axios from 'axios'
+import setCookie from '../../../../js/cookie'
+
 const login = (e, loginData, setUser, navigate) => {
   e.preventDefault()
   axios({
@@ -12,7 +14,9 @@ const login = (e, loginData, setUser, navigate) => {
   }).then((res) => {
     if (res.status === 200) {
       const auth = res.data
-      setUser(auth.username)
+      setUser({ username: auth.username, firstname: auth.firstname })
+      setCookie('username', auth.username, 1)
+      setCookie('firstname', auth.firstname, 1)
       navigate('/')
       return true
     }

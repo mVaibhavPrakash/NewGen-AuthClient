@@ -6,6 +6,7 @@ const signup = (e, loginData, setUser, navigate) => {
     url: 'http://localhost:3002/signup',
     data: {
       username: loginData.username,
+      firstname: loginData.firstname,
       password: loginData.password,
     },
   }).then((res) => {
