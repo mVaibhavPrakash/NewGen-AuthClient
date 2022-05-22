@@ -1,6 +1,6 @@
 .auth{
 	position: relative;
-	top:1.4rem;
+	top:1rem;
 }
 
 .auth-wave{
@@ -50,7 +50,7 @@
 	margin: 15px 0;
 	color: #2d386e;
 	text-transform: uppercase;
-	font-size: 0.8rem;
+	font-size: 0.5rem;
 }
 
 .auth-login-content .auth-input-div{
@@ -71,7 +71,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 0.8rem;
+	font-size: 0.5rem;
 }
 
 .auth-i i{
@@ -80,7 +80,7 @@
 
 .auth-input-div > div{
     position: relative;
-	height: 45px;
+	height: 15px;
 }
 
 .auth-input-div > div > h5{
@@ -91,6 +91,19 @@
 	color: #2d386e;
 	font-size: 14px;
 	transition: .3s;
+}
+
+#error{
+	display: block;
+	text-decoration: none;
+	color: #e71717;
+	font-size: 0.3rem;
+	transition: .3s;
+	margin-bottom: 10px;
+}
+
+#noerror{
+	display: none;
 }
 
 .auth-input-div:before, .auth-input-div:after{
@@ -133,8 +146,8 @@
 	border: none;
 	outline: none;
 	background: none;
-	padding: 0.25rem 0.35rem;
-	font-size: 0.4rem;
+	padding-left:0.25rem;
+	font-size: 0.25rem;
 	color: #2d386e;
 	font-family: 'poppins', sans-serif;
 }
@@ -143,12 +156,16 @@
 	margin-bottom: 10px;
 }
 
+.auth-div input{
+	border-bottom: 2px solid #2d386e;
+}
+
 .auth-a{
 	display: block;
 	text-align: right;
 	text-decoration: none;
 	color: #2d386e;
-	font-size: 0.3rem;
+	font-size: 0.25rem;
 	transition: .3s;
 }
 
