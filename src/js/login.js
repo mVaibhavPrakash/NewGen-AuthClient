@@ -13,13 +13,15 @@ const login = (
   passwordRef
 ) => {
   e.preventDefault()
+  console.log('ngnix is working')
   axios({
     method: 'POST',
-    url: 'http://localhost:3012/login',
+    url: '/login',
     data: {
       username: loginData.username,
       password: loginData.password,
     },
+    withCredentials: true,
   }).then((res) => {
     const auth = res.data
     if (res.status === 200) {
@@ -28,12 +30,16 @@ const login = (
           id: auth.id,
           username: auth.username,
           firstname: auth.firstname,
+          token: auth.toke,
         })
       )
       dispatch(setLoggedIn())
-      setCookie('id', auth.id, 1)
-      setCookie('username', auth.username, 1)
-      setCookie('firstname', auth.firstname, 1)
+      const object = {
+        id: auth.id,
+        username: auth.username,
+        firstname: auth.firstname,
+      }
+      localStorage.setItem('userData', JSON.stringify(object))
       navigate('/')
       return true
     }

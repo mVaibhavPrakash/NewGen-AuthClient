@@ -11,7 +11,7 @@ const signup = (
   e.preventDefault()
   axios({
     method: 'POST',
-    url: 'http://localhost:3012/signup',
+    url: '/signup',
     data: {
       username: loginData.username,
       firstname: loginData.firstname,

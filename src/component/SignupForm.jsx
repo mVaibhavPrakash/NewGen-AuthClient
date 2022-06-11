@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState} from 'react'
 import {Link, useNavigate,Outlet } from 'react-router-dom'
-import { useSelector,useDispatch } from 'react-redux'
+import { useSelector} from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faLock} from '@fortawesome/free-solid-svg-icons'
 import img1 from '../../../../../public/img/wave.png'
@@ -9,8 +9,8 @@ import img3 from '../../../../../public/img/avatar.png'
 import signup from '../js/signup'
 import '../css/loginform.css'
 import Navbar from '../../../LandingpageClient/src/components/Navbar'
-
 const LoginForm = ({footerRef}) => {
+	const User = useSelector((state) => state.auth)
 	useEffect(() =>{
 		footerRef.current.style.display='none'
 
@@ -32,7 +32,6 @@ const LoginForm = ({footerRef}) => {
 	const [firstname,setFirstName] = useState('')
 	const [Error, setError] = useState('')
 	const navigate = useNavigate()
-	console.log(Error)
 	
     return (
     <>
@@ -92,7 +91,7 @@ const LoginForm = ({footerRef}) => {
 							className="auth-input"/>
 						</div>
 					</div>
-					<Link className='auth-a' to={"auth/login"}>Already have account?Login</Link>
+					<Link className='auth-a' to={"/auth/login"}>Already have account?Login</Link>
 					<input type="submit" 
 							onClick={e => signup(e,{username,firstname,password,setUsername,setFirstName,setPassword},navigate,setError,usernameRef,firstNameRef,passwordRef)} 
 							className="auth-btn" 

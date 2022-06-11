@@ -75,7 +75,7 @@ const LoginForm = ({footerRef}) => {
 							className="auth-input"/>
 						</div>
 					</div>
-					<Link className='auth-a' to={"auth/signup"}>Don't have account?Signup</Link>
+					<Link className='auth-a' to={"/auth/signup"}>Don't have account?Signup</Link>
 					<input 
 					type="submit" 
 					onClick={e => login(e,{username,password},dispatch,setUser,setLoggedIn,navigate,setError,usernameRef,passwordRef)} 
