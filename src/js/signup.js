@@ -1,9 +1,9 @@
 import axios from 'axios'
 const signup = (
   e,
-  loginData,
+  formData,
+  dispatch,
   navigate,
-  setError,
   usernameRef,
   firstNameRef,
   passwordRef
@@ -13,22 +13,21 @@ const signup = (
     method: 'POST',
     url: '/signup',
     data: {
-      username: loginData.username,
-      firstname: loginData.firstname,
-      password: loginData.password,
+      username: formData.username,
+      firstname: formData.firstname,
+      password: formData.password,
     },
   }).then((res) => {
     if (res.status === 200) {
       navigate('/auth/login')
     } else {
-      console.log('renderererrere')
-      loginData.setUsername('')
-      loginData.setFirstName('')
-      loginData.setPassword('')
+      dispatch({ type: 'username', payload: { username: '' } })
+      dispatch({ type: 'firstname', payload: { firstname: '' } })
+      dispatch({ type: 'password', payload: { password: '' } })
+      dispatch({ type: 'error', payload: { error: res.data.error } })
       firstNameRef.current.textContent = 'First Name'
       usernameRef.current.textContent = 'Username'
       passwordRef.current.textContent = 'Password'
-      setError(res.data.error)
     }
   })
 }

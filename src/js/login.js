@@ -3,12 +3,12 @@ import setCookie from '../../../../js/cookie'
 
 const login = (
   e,
-  loginData,
+  formData,
+  formDispatch,
   dispatch,
   setUser,
   setLoggedIn,
   navigate,
-  setError,
   usernameRef,
   passwordRef
 ) => {
@@ -18,8 +18,8 @@ const login = (
     method: 'POST',
     url: '/login',
     data: {
-      username: loginData.username,
-      password: loginData.password,
+      username: formData.username,
+      password: formData.password,
     },
     withCredentials: true,
   }).then((res) => {
@@ -49,7 +49,7 @@ const login = (
     }, 500)
     usernameRef.current.textContent = 'Username'
     passwordRef.current.textContent = 'Password'
-    setError(auth.error)
+    formDispatch({ type: 'error', payload: { error: auth.error } })
   })
 }
 
