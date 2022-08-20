@@ -11,6 +11,7 @@ import '../css/loginform.css'
 import Navbar from '../../../LandingpageClient/src/components/Navbar'
 import { setUser } from '../../../../redux/slices/authSlice'
 import {setLoggedIn} from '../../../../redux/slices/authSlice'
+import { setProfileCreated } from '../../../../redux/slices/authSlice'
 import { useReducer } from 'react'
 
 const LoginForm = ({footerRef}) => {
@@ -40,13 +41,12 @@ const LoginForm = ({footerRef}) => {
 	const User = useSelector((state) => state.auth)
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
-
+ 
+	console.log(footerRef)
 	useEffect(() =>{
+		if(footerRef.current.style.display!=='none')
 		footerRef.current.style.display='none'
-		return ()=>{
-			footerRef.current.style.display='revert'
-		}
-	})
+	},[footerRef])
 	
     return (
     <>
@@ -94,7 +94,7 @@ const LoginForm = ({footerRef}) => {
 					<Link className='auth-a' to={"/auth/signup"}>Don't have account?Signup</Link>
 					<input 
 					type="submit" 
-					onClick={e => login(e,formData,formDispatch,dispatch,setUser,setLoggedIn,navigate,usernameRef,passwordRef)} 
+					onClick={e => login(e,formData,formDispatch,dispatch,setProfileCreated,setUser,setLoggedIn,navigate,usernameRef,passwordRef)} 
 					className="auth-btn" value="Login"/>
 				</div>
 			</div>

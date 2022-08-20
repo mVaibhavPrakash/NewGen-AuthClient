@@ -6,6 +6,7 @@ const login = (
   formData,
   formDispatch,
   dispatch,
+  setProfileCreated,
   setUser,
   setLoggedIn,
   navigate,
@@ -27,18 +28,27 @@ const login = (
     if (res.status === 200) {
       dispatch(
         setUser({
-          id: auth.id,
+          uid_person: auth.id,
           username: auth.username,
-          firstname: auth.firstname,
-          token: auth.toke,
+          fullname: auth.fullname,
         })
       )
-      dispatch(setLoggedIn())
+      dispatch(setLoggedIn({
+        isLoggedIn:true
+      }))
       const object = {
         id: auth.id,
         username: auth.username,
-        firstname: auth.firstname,
+        fullname: auth.fullname,
+        isProfileCreated: auth.isProfileCreated,
       }
+      if (auth.isProfileCreated)
+        dispatch(
+          setProfileCreated({
+            isprofileCreated: auth.isProfileCreated,
+          })
+        )
+
       localStorage.setItem('userData', JSON.stringify(object))
       navigate('/')
       return true

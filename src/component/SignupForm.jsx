@@ -2,7 +2,7 @@ import { useEffect, useRef} from 'react'
 import {Link, useNavigate,Outlet } from 'react-router-dom'
 import { useSelector} from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser,faLock} from '@fortawesome/free-solid-svg-icons'
+import { faUser,faLock, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import img1 from '../../../../../public/img/wave.png'
 import img2 from '../../../../../public/img/bg.png'
 import img3 from '../../../../../public/img/avatar.png'
@@ -17,10 +17,13 @@ const LoginForm = ({footerRef}) => {
 	const usernameRef= useRef(null)
 	const twoRef = useRef(null)
 	const nameRef = useRef(null)
-	const firstNameRef = useRef(null)
+	const fullNameRef = useRef(null)
 	const passRef = useRef(null)
 	const pwdRef=useRef(null)
 	const passwordRef = useRef(null)
+	const threeRef= useRef(null)
+	const mailRef = useRef(null)
+	const emailRef = useRef(null)
 
 	const reducer = (formData,action) =>{
 		switch (action.type) {
@@ -28,8 +31,10 @@ const LoginForm = ({footerRef}) => {
 				return {...formData, password:action.payload.password}
 			case 'username':
 				return {...formData,username:action.payload.username}
-			case 'firstname':
-				return {...formData,firstname:action.payload.firstname}
+			case 'fullname':
+				return {...formData,fullname:action.payload.fullname}
+			case 'email':
+				return {...formData,email:action.payload.email}
 			case 'error':
 				return {...formData,error:action.payload.error}
 			default:
@@ -38,18 +43,15 @@ const LoginForm = ({footerRef}) => {
 	}
 
 
-	const [formData,dispatch] = useReducer(reducer,{username:'',firstname:'',password:'',error:''})
+	const [formData,dispatch] = useReducer(reducer,{username:'',fullname:'',password:'',email:'',error:''})
 
 	const User = useSelector((state) => state.auth)
 	const navigate = useNavigate()
 
 	useEffect(() =>{
+		if(footerRef.current.style.display !=='none')
 		footerRef.current.style.display='none'
-
-		return ()=>{
-			footerRef.current.style.display='revert'
-		}
-	})
+	},[footerRef])
 	
     return (
     <>
@@ -84,13 +86,28 @@ const LoginForm = ({footerRef}) => {
 							<FontAwesomeIcon className='auth-ii' icon={faUser}/>
 						</div>
 						<div className="auth-div">
-								<h5 ref={firstNameRef}>First Name</h5>
+								<h5 ref={fullNameRef}>Full Name</h5>
 								<input type="text" 
 								autoComplete="off"
-								value={formData.firstname} 
-								onChange={(e) => {dispatch({type:'firstname',payload:{firstname:e.target.value}});console.log(formData.firstname)} }
-								onBlur={()=>{twoRef.current.style.borderBottom='2px solid #2d386e';nameRef.current.style.color='#2d386e';!formData.username ? firstNameRef.current.textContent='Firstname':''}} 
-								onFocus={(e)=>{twoRef.current.style.borderBottom='2px solid #38d39f';firstNameRef.current.textContent='';nameRef.current.style.color='#38d39f'}} 
+								value={formData.fullname} 
+								onChange={(e) => {dispatch({type:'fullname',payload:{fullname:e.target.value}});console.log(formData.fullname)} }
+								onBlur={()=>{twoRef.current.style.borderBottom='2px solid #2d386e';nameRef.current.style.color='#2d386e';!formData.username ? fullNameRef.current.textContent='fullname':''}} 
+								onFocus={(e)=>{twoRef.current.style.borderBottom='2px solid #38d39f';fullNameRef.current.textContent='';nameRef.current.style.color='#38d39f'}} 
+								className="auth-input" />
+						</div>
+					</div>
+					<div className="auth-input-div" ref={threeRef}>
+						<div className="auth-i" ref={mailRef}>
+							<FontAwesomeIcon className='auth-ii' icon={faEnvelope}/>
+						</div>
+						<div className="auth-div">
+								<h5 ref={emailRef}>Email</h5>
+								<input type="email" 
+								autoComplete="off"
+								value={formData.email} 
+								onChange={(e) => {dispatch({type:'email',payload:{email:e.target.value}});console.log(formData.email)} }
+								onBlur={()=>{threeRef.current.style.borderBottom='2px solid #2d386e';mailRef.current.style.color='#2d386e';!formData.email ? emailRef.current.textContent='email':''}} 
+								onFocus={(e)=>{threeRef.current.style.borderBottom='2px solid #38d39f';emailRef.current.textContent='';mailRef.current.style.color='#38d39f'}} 
 								className="auth-input" />
 						</div>
 					</div>
@@ -111,7 +128,7 @@ const LoginForm = ({footerRef}) => {
 					</div>
 					<Link className='auth-a' to={"/auth/login"}>Already have account?Login</Link>
 					<input type="submit" 
-							onClick={e => signup(e,formData,dispatch,navigate,usernameRef,firstNameRef,passwordRef)} 
+							onClick={e => signup(e,formData,dispatch,navigate,usernameRef,fullNameRef,passwordRef,emailRef)} 
 							className="auth-btn" 
 							value="Signup"/>
 				</div>

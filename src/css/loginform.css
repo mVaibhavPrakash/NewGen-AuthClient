@@ -1,11 +1,11 @@
 .auth{
 	position: relative;
-	top:1rem;
+	top:1.2rem;
 }
 
 .auth-wave{
 	position: fixed;
-	top:1.4rem;
+	top:1.8rem;
 	bottom: 0;
 	left: 0;
 	height: 100%;
@@ -17,8 +17,8 @@
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap :3.5rem;
-    padding: 0 1rem;
+    grid-gap :4.5rem;
+    padding: 0 1.2rem;
 }
 
 .auth-img{
@@ -50,7 +50,7 @@
 	margin: 15px 0;
 	color: #2d386e;
 	text-transform: uppercase;
-	font-size: 0.5rem;
+	font-size: 0.6rem;
 }
 
 .auth-login-content .auth-input-div{
@@ -71,7 +71,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 0.5rem;
+	font-size: 0.6rem;
 }
 
 .auth-i i{
@@ -97,7 +97,7 @@
 	display: block;
 	text-decoration: none;
 	color: #e71717;
-	font-size: 0.3rem;
+	font-size: 0.4rem;
 	transition: .3s;
 	margin-bottom: 10px;
 }
@@ -146,8 +146,8 @@
 	border: none;
 	outline: none;
 	background: none;
-	padding-left:0.25rem;
-	font-size: 0.25rem;
+	padding-left:0.3rem;
+	font-size: 0.3rem;
 	color: #2d386e;
 	font-family: 'poppins', sans-serif;
 }
@@ -165,7 +165,7 @@
 	text-align: right;
 	text-decoration: none;
 	color: #2d386e;
-	font-size: 0.25rem;
+	font-size: 0.3rem;
 	transition: .3s;
 }
 
@@ -182,11 +182,11 @@
 	border: none;
 	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
 	background-size: 200%;
-	font-size: 0.3rem;
+	font-size: 0.4rem;
 	color: #fff;
 	font-family: 'Poppins', sans-serif;
 	text-transform: uppercase;
-	margin: 0.5rem 0;
+	margin: 0.6rem 0;
 	cursor: pointer;
 	transition: .5s;
 }
@@ -197,7 +197,7 @@
 
 @media screen and (max-width: 1050px){
 	.auth-container{
-		grid-gap: 2.5rem;
+		grid-gap: 3.5rem;
 	}
 }
 
@@ -208,7 +208,7 @@
 	}
 
 	.auth-login-content h2{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         margin: 8px 0;
 	}
 
